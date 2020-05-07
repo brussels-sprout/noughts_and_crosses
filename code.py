@@ -16,11 +16,25 @@ def rules():
     # source: https://www.exploratorium.edu/brain_explorer/tictactoe.html (edited)
 
 
-board = [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""]
-]
+def main():
+    board = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ]
+    print_board()
+
+
+def print_board():
+    print("╔═══╤═══╤═══╗")
+    print("║ X │ X │ X ║")
+    print("╟ ─ ┼ ─ ┼ ─ ╢")
+    print("║ X │ X │ X ║")
+    print("╟ ─ ┼ ─ ┼ ─ ╢")
+    print("║ X │ X │ X ║")
+    print("╚═══╧═══╧═══╝")
+
 
 title()
 rules()
+main()
