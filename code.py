@@ -26,7 +26,7 @@ def main():
     print_board(board)
 
 
-def print_board(b):  # b for board
+def print_board(b):  # b for board; i promise this looks better during execution ok.
     print("╔═══╤═══╤═══╗")
     print(f"║ {b[0][0]} │ {b[0][1]} │ {b[0][2]} ║")
     print("╟ ─ ┼ ─ ┼ ─ ╢")
