@@ -39,8 +39,8 @@ def main():
         [" ", " ", " "],
         [" ", " ", " "],
         [" ", " ", " "]
-    ]
-    # print_board(board)
+    ]  # board in initial state
+    turn = 0  # turn count
 
 
 def print_board(b):  # b for board; i promise this looks better during execution ok.
@@ -51,6 +51,14 @@ def print_board(b):  # b for board; i promise this looks better during execution
     print("╟─────┼─────┼─────╢")
     print(f"║  {b[2][0]}  │  {b[2][1]}  │  {b[2][2]}  ║")
     print("╚═════╧═════╧═════╝")
+
+
+def player_turn(t):  # t for turn; return whose turn it is
+    if t % 2 == 0:
+        return "X"
+    else:
+        return "0"
+    # player X has even turn count and player O odd turn count
 
 
 intro()
