@@ -51,11 +51,12 @@ def main():
         nonlocal cont
 
         while cont:
-            if turn <= 7:  # at 9th turn (turn == 8) board is full
+            if turn <= 8:  # at 9th turn (turn == 8) board is full
                 player = player_turn(turn)
                 print_board(board)
 
                 coords = input(f"{player}'s turn: ")
+                print()
                 if check_input(coords):
                     coords = adjust_input(coords)
 
@@ -65,18 +66,20 @@ def main():
                     if not check_overwrite(board, v_coord, h_coord):
                         board[v_coord][h_coord] = player
                         if check_win(board):
+                            print_board(board)
                             print(f"\nPlayer {player} won!")
+
                             cont = False
                         turn += 1
                     else:
-                        print("\nThe input is invalid; look at the example above for valid input format. Try again.\n")
+                        print("The input is invalid; look at the example above for valid input format. Try again.\n")
                         play()
                 else:
-                    print("\nThe input is invalid; look at the example above for valid input format. Try again/\n")
+                    print("The input is invalid; look at the example above for valid input format. Try again.\n")
                     play()
             else:
                 cont = False
-                print("\nTie!")
+                print("Tie!")
 
     play()
 
