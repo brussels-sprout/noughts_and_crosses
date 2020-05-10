@@ -1,4 +1,4 @@
-# tic_tac_toe
+# noughts_and_crosses
 # by brussels_sprout
 
 
@@ -9,7 +9,7 @@ def intro():
 
 
 def title():
-    print("\033[1m" + "Tic Tac Toe" + "\033[0;0m" + "\nby brussels-sprout\n")
+    print("\033[1m" + "Noughts and Crosses" + "\033[0;0m" + "\nby brussels-sprout\n")
     # weird things make it bold
 
 
@@ -43,7 +43,7 @@ def main():
     turn = 0  # turn count
     cont = True  # cont for continue
 
-    print("\n-----Play!-----\n")
+    print("\n-----Play-----\n")
 
     def play():
         nonlocal board
@@ -65,7 +65,7 @@ def main():
                     if not check_overwrite(board, v_coord, h_coord):
                         board[v_coord][h_coord] = player
                         if check_win(board):
-                            print(f"\nGame over.\nPlayer {player} won!")
+                            print(f"\nPlayer {player} won!")
                             cont = False
                         turn += 1
                     else:
@@ -76,9 +76,12 @@ def main():
                     play()
             else:
                 cont = False
-                print("\nGame over.\nTie!")
+                print("\nTie!")
 
     play()
+
+    print("\n-----Game over-----\n")
+
     end()
 
 
@@ -137,7 +140,7 @@ def check_win(b):  # b for board
 
 
 def end():
-    if input("\nInput any character(s) to play again or simply press ENTER to exit: ") == "":
+    if input("Input any character(s) to play again or simply press ENTER to exit: ") == "":
         print("\nDone.")
         exit()
     else:
